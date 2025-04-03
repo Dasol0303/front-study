@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label>고객명: </label><input type="text"> <br><br>
+        <label>전화번호: </label><input type="text"><br><br>
+        <label>email: </label><input type="text"><br><br>
+        <!-- email의 타입을 email로 바꿔야 조금 더 정확한 이메일 요구가 만들어짐 -->
+
+        <label>피자선택: </label>
+        <select>
+            <option>피자를 선택하세요.</option>
+                <option>치즈</option>
+                <option>페페로니</option>
+                <option>콤비네이션</option>
+        </select>
+        
+        <br>
+        <fieldset>
+            <legend>피자선택</legend>
+            <label><input type="radio" name="size">Small</label><br><br>
+            <label><input type="radio" name="size">Medium</label><br><br>
+            <label><input type="radio" name="size">Large</label>
+        </fieldset>
+        <fieldset>
+            <legend>토핑선택</legend>
+            <label><input type="checkbox" name="size">베이컨</label><br><br>
+            <label><input type="checkbox" name="size">치즈</label><br><br>
+            <label><input type="checkbox" name="size">양파</label><br><br>
+            <label><input type="checkbox" name="size">버섯</label>
+        </fieldset>
+
+        <label>배송희망시간: </label><input type="time"> <br><br>
+        <label>배송시 요청사항: </label><textarea></textarea> <br><br>
+        <input type="submit" value="주문하기">
+    </form>
+</body>
+</html>
