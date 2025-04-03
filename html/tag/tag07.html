@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 암묵적인 방법 -->
+    <label>패티추가<input type="checkbox"></label>
+    <label>치즈추가<input type="checkbox"></label>
+    <label>피클추가<input type="checkbox" checked></label>
+    
+    <br><br>
+
+    <!-- 명시적인 방법 -->
+    <label for="addShot">샷추가</label>     <input type="checkbox" id="addShot">
+    <label for="addIce">얼음추가</label>    <input type="checkbox" id="addIce">
+    <label for="less25">물25ml적게</label>  <input type="checkbox" id="less25">
+
+    <br><br>
+    
+    <fieldset>
+        <legend>족발 사이즈</legend>
+        <label>족발 소<input type="radio" name="size"></label>
+        <label>족발 중<input type="radio" name="size"></label>
+        <label>족발 대<input type="radio" name="size" checked></label>
+    </fieldset>
+    
+    <br>
+
+    <textarea readonly>다중 텍스트 입력 공간</textarea>
+
+    <br>
+
+    <select multiple size="6">
+        <optgroup label="햄버거">
+            <option>싸이버거</option>
+            <option>휄렛버거</option>
+            <option>치즈버거</option>
+        </optgroup>
+        <optgroup label="면류">
+            <option selected>라면</option>
+            <option>냉면</option>
+            <option>쫄면</option>
+        </optgroup>
+    </select>
+
+    <br>
+    <input type="button" value="인풋버튼">
+    <input type="submit" value="인풋submit버튼">
+    <input type="reset" value="인풋reset버튼">
+    <button type="submit">태그submit버튼</button>
+<!--button type="submit/button"의 차이는 폼 안에서 작동하는 방식을 정하는 방법-->
+
+<br>
+<input type="text" value="하이">
+<h3>form</h3>
+<form>
+<input type="text" maxlength="5" placeholder="아이디를 입력해주세요.">
+<input type="reset" disabled>
+<!-- Ctrl + K + C = 주석 단축키(이걸로 주석을 껐다켰다 가능!) -->
+<!-- <input type="submit"> -->
+
+<button type="button">버튼</button>
+<button type="submit">submit버튼</button>
+<!-- 위의 버튼은 서브밋처럼 작동 이 경우 이것을 막기 위해 type="button"을 추가함 -->
+
+</form>
+<!--폼 안의 인풋과 폼 바깥의 인풋의 초기화 버튼 영향-->
+<!--제출 버튼은 좀 다른 것 같아!-->
+
+<br>
+<button>
+    <img src="용시바.jpg">
+    용시바 버튼
+</button>
+
+</body>
+</html>
