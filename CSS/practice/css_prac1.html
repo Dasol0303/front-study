@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color: orange;
+        }
+        /* 조합 가능 h1, h3*/
+        #flower {
+            color: orange;
+        }
+        
+        h3 {
+            color: blue;
+        }
+
+        #date {
+            color: blue;
+        }
+
+        /*
+        (class를 걸어주기)
+        .color-orange { color : orange}
+        .color-blue { color : blue}
+        이게 더 깔끔하당
+        + class는 다른 속성을 여러개 가질 수 있다. ex- em, strong 등등
+        */
+
+
+    </style>
+
+</head>
+<body>
+    <h1>제1회 봄빛 수목원 여름꽃 축제</h1>
+
+        <span id="flower"><h2>수련·수국·무궁화.원추리</h2></span>
+        <!-- ㅋㅋㅋㅋ ㄱ+한자 = 가운데 점ㅋㅋㅋㅋㅋ -->
+        <!-- <h2 id="flower"> 대체 가능-->
+        <!-- 다중 조건 부여할 때는 id보다 class사용 권장-->
+
+        <h3>아름다운 여름꽃과 시원한 바다를 ....</h3>
+        <ul>
+            <li> 일시 : <span id="date">6월 15일 부터 8월 15일 까지</span></li>
+<!-- span 태그 외 p 태그로 색상 구분 해줄 경우 : 블럭이 생겨 구분된 부분의 줄바꿈 현상이 일어남. -->
+            <li> 장소 : 봄빛 수목원 일원</li>
+        </ul>
+
+</body>
+</html>
