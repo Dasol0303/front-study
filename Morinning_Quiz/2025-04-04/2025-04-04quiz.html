@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- CSS 작성 영역 -->
+     <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+    <h1>나의 점심 취향 설문조사</h1>
+<form>
+        이름 : <input type="text">
+<br><br>
+
+        <fieldset>
+            <legend>학년 선택</legend>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>학년</th>
+                            <th>선택</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1학년</td>
+                            <td><input type="radio" name="size"></td>
+<!-- name은 뭘로 지정해도 O/ 그러나 나중에는 구분을 위해 의미있는 것으로 지어주는 것이 좋다.+지정 복수 선택 가능? -->
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2학년</td>
+                            <td><input type="radio" name="size"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3학년</td>
+                            <td><input type="radio" name="size"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><label for="size2">4학년</label></td>
+                            <td><input type="radio" name="size" id="size2"></td>
+<!-- label로 감싸주어도 괜찮지만 명시적으로 글귀 선택이 가능하게 해주기 위해 for과 id를 추가-->
+                        </tr>
+                    </tbody>
+                </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>좋아하는 음식 (복수 선택 가능)</legend>
+                <label><input type="checkbox"> 한식</label><br>
+                <label><input type="checkbox"> 중식</label><br>
+                <label><input type="checkbox"> 일식</label><br>
+                <label><input type="checkbox"> 양식</label><br>
+                <label><input type="checkbox"> 분식</label>
+        </fieldset>
+<br>
+        <input type="submit" value="제출하기">
+</form>
+<!-- 설문조사 형식이라 크게 form으로 감싸주는 것이 좋음 제출해야하니까 -->
+</body>
+</html>
