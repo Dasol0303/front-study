@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 그룹 선택자*/
+        p, strong {
+            color: red;
+        }
+        /*strong {
+            color: red;
+        }*/
+
+        /*.top-div > p {
+            color: blue;
+        }*/
+        /* div의 자식(계층구조 중 부모의 자식)에게 적용하겠다는 의미 + 부모의 바로 밑 선택만 가능*/
+
+        /* 하위 선택자 - 그룹과의 차이 : 콤마인지 띄어쓰기인지 구분*/
+        /*.top-div p {
+            color: blue;
+        }
+
+        .top-div > span {
+            color: green;
+        }*/
+
+        /*인접 형제 선택자*/
+        p + span {
+            color: orange;
+        }
+        /*일반 형제 선택자*/
+        p ~ span {
+            color: pink;
+        }
+        /* 가상 요소 선택자 */
+        #vr-p::before {
+            content: "*컨텐츠: 글귀 태그 안에 사용되는 글자";
+            color:rgb(224, 173, 224);
+        }
+
+        #vr-p::after {
+            content: "...?";
+            color:rgb(74, 105, 54);
+        }
+
+        /*가상 클래스 선택자*/
+        /*밑의 색은 링크 방문 기록과 아닌 것의 구분*/
+        a:link {
+            color: rgb(20, 255, 51);
+        }
+        a:visited {
+            color: tomato;
+        }
+
+        a:hover {
+            color: blue;
+        }
+        a:active {
+            color: green;
+        }
+
+        input:focus {
+            color: red;
+        }
+        input:disabled {
+            color: coral;
+        }
+
+        .chk:checked + span {
+            color: red;
+        }
+
+        .chk:checked + label {
+            color: red;
+        }
+</style>
+
+</head>
+<body>
+
+    <div class="top-div">
+        <p>p1</p>
+        <p>p2</p>
+        <span>span1</span>
+        <span>span2</span>
+
+        <div>
+            <p>p3</p>
+            <p id="vr-p">p4</p>
+            <strong>strong</strong>
+            <span>span3</span>
+        </div>
+
+        <div>
+            <strong>strong2</strong>
+            <span>span4</span>
+        </div>
+
+    </div>
+
+    <p>p5</p>
+    <!-- 위의 글귀의 경우 부모는 body -->
+
+    <a href="https://www.samsungsvc.co.kr"> 삼성</a>
+    <a href="https://www.google.co.kr/?hl=ko"> 구글</a>
+
+<br><br>
+
+<input type="text" value="input1 value"><br>
+<input type="text" value="input1 value" disabled><br>
+
+    <br>
+
+    <input type="checkbox" class="chk"><span>출근</span><br>
+    <input type="checkbox" class="chk"><span>퇴근</span><br>
+    <input type="radio" class="chk"><span>집</span><br>
+
+    <input type="checkbox" class="chk" id="retire"><label for="retire">조퇴</label><br>
+<!-- 체크박스 글귀 선택 명시 방법 id와 for문 -->
+    <label>
+        <input type="checkbox" class="chk">
+        <span>조퇴</span> <!--띄어쓰기가 표기되는 이유 : 인풋과 스팬 사이의 엔터-->
+    </label><br>
+<!-- 이 경우 label이 부모가 되어서 label의 의도가 나타나지 않음 -->
+
+</body>
+</html>

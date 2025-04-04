@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            
+            /* 구조적 가장 클래스 선택자*/
+            p:first-child {
+                color: red;
+            }
+            
+            p:last-child {
+                color: blue;
+            }
+
+            /*p:nth-child(3) {
+                color: green;
+            }*/
+
+            /*p:nth-of-type(3) {
+                color: green;
+            }*/
+            
+            /*
+                짝수 : even 2n
+                홀수 : odd 2n + 1
+            */
+            p:nth-of-type(2n+3) {
+                color: green;
+            }
+
+            
+
+        </style>
+</head>
+<body>
+    <div class="top-div">
+        <p>p1</p>
+        <p>p2</p>
+        <span>span1</span>
+        <span>span2</span>
+
+        <div>
+            <p>p3</p>
+            <p id="vr-p">p4</p>
+            <strong>strong</strong>
+            <span>span3</span>
+        </div>
+
+        <div>
+            <strong>strong2</strong>
+            <span>span4</span>
+        </div>
+
+    </div>
+
+    <p>p5</p>
+
+2025.04.04 16:03 정용진
+<div>
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <p>p4</p>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+
+    <div>
+        <p>p1</p>
+        <span>p2</span>
+        <p>p3</p>
+        <span>p4</span>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+
+    <div>
+        <p>p1</p>
+        <span>p2</span>
+        <span>p4</span>
+        <p>p3</p>
+        <p>p5</p>
+        <p>p6</p>
+    </div>
+
+
+</body>
+</html>
