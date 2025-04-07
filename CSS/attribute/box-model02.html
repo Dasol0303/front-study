@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* 전체선택자 모든 요소에 기본 세팅으로 적용*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*
+            display
+                none : 표시X (숨김)
+                block : 한줄 다 차지(가로줄), 사이즈(width/height) 적용, 여백 적용
+                lnline : 내용(content)요소 사이즈만큼만 차지, 같은 줄 옆에 나란히 배치, 사이즈 적용X, 
+                        여백 가로 (좌/우) 적용
+                inline-block : 자체적으로는 block처럼 작용(사이즈, 여백...)
+                                다른 요소들과의 상호작용은 inline 취급(나란히 배치)
+        */
+
+        .box1 {
+            /*display: none;*/
+
+            /* div tag 기본 block*/
+            display: block;
+
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .box1:hover {
+            display: inline-block;
+        }
+
+        .box2 {
+            /*display: none;*/
+
+            /* div tag 기본 block*/
+            /* display: inline-block = 옆에 있는 다른 요소를 인라인 요소로 인식(?)*/
+            display: inline-block;
+
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+
+        .span1 {
+            /*span tag 기본 inline*/
+            display: inline;
+
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .parent {
+            width: 200px;
+            height: 100px;
+            color: blue;
+            border: 1px solid blue;
+        }
+        .child {
+            width: 100px;
+            height: 50px;
+            color: red;
+            border: 1px solid red;
+            display: none;
+        }
+
+        .parent:hover .child { /* parent 클래스에 마우스가 올라간 경우 그의 자식(자손) child 클래스*/
+            display: block;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+
+    <span class="span1">span1</span>
+    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, saepe officia repellendus perspiciatis eveniet minima debitis nobis voluptates magni dolorem nihil? Fugiat, incidunt alias tenetur molestiae a id dolorem voluptate!</span>
+
+    <br><br>
+
+    <div class="parent">
+        부모
+        <div class="child">
+            자식
+        </div>
+    </div>
+</body>
+</html>
