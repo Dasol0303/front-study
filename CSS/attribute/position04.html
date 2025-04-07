@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body { height: 4000px; }
+
+        .box { width: 100px; height: 100px; }
+
+        .red-box {background-color: red;}
+        .green-box {
+            background-color: green;
+            position: fixed;
+            top: 200px;
+            left: 300px;
+        }
+
+        .top-box {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            background-color: blue;
+        }
+
+        .navbar {
+            height: 100px;
+            background-color: lightblue;
+            position: sticky;
+            top: 30px; /* 위에서부터 100px의 위치에 들어가면! -> fixed처럼 작동*/
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
+
+    <div class="navbar"></div>
+
+    <div class="top-box"></div>
+</body>
+</html>

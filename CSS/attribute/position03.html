@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        .red-box {
+            background-color: red;
+            position: relative;
+            left: 100px;
+    }
+
+        .green-box {
+            background-color: green;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        .blue-box {
+            background-color: blue;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            background-color: lightgray;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="box red-box"></div>
+    <div class="box green-box"></div>
+    <div class="box blue-box"></div>
+
+    <div class="container">
+        <div class="box red-box"></div>
+        <div class="box green-box"></div>
+        <div class="box blue-box"></div>
+    </div>
+    
+
+</body>
+</html>
