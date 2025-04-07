@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        .back {
+            background-color: blue;
+        }
+
+        .back-img {
+            background-image: url('../../images/펭귄.jpg');
+            background-repeat: no-repeat;
+            /* background-repeat: space;의 경우, 이미지가 잘리지 않게 반복. 희망 영역에 따라 한장만 반복이 될 경우 있음.*/
+            /*background-size: cover;*/
+            background-position: center bottom;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="box back"></div>
+    <div class="box back-img"></div>
+
+</body>
+</html>
