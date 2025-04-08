@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-weight: 700;
+        }
+
+        .lightgray {
+            background-color: lightgray;
+        }
+
+        .border {
+            width: 500px;
+            height: 300px;
+
+            border: 3px solid black;
+
+            position: relative;
+            top: 20px;
+            left: 50px;
+        }
+
+        .A {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .B {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+
+            position: relative;
+            top: -150px;
+            right: -50px;
+
+            display: inline-block;
+
+        }
+
+        .C {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="lightgray">
+        <p>배경색이 lightgray</p>
+        <h3>h3글자</h3>
+    </div>
+
+    <br>
+
+    <div class="border"> <!--보통 이름은 container라고 지정하지만 협력의 경우 A-container같이 앞에 구분을-->
+        <div class="A">A</div>
+        <div class="C">C</div>
+        <div class="B">B</div>
+    </div>
+</body>
+</html>
