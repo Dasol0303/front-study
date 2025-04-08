@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            width: 150px;
+            height: 70px;
+            display: inline-block;
+            background-color: lightgray;
+            border:1px solid black;   
+            position: relative;
+            cursor: pointer; /*마우스 올리면 누를 수 있는 포인터 표시*/
+        }
+
+        .sub-menu {
+            width: 100%;
+            height: 210px;
+            /* height: 0; */
+            
+            border:1px solid red;
+            background-color: olive;
+            position: absolute;
+            top: 70px;
+            /* display: none; */
+            opacity: 0;
+
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        .menu:hover .sub-menu {
+            /*display: block;
+            height: 210px;*/
+            opacity: 1;
+            transition-property: all;
+            transition-duration: 1.5s;
+
+        }
+
+        .sub-menu-item {
+            height: 70px;
+            border: 1px dashed blue;
+        }
+
+        .sub-menu-item:hover {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="menu-bar">
+        <div class="menu">
+            <div class="sub-menu">
+                <div class="sub-menu-item"></div>
+                <div class="sub-menu-item"></div>
+                <div class="sub-menu-item"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="sub-menu"></div>
+        </div>
+        <div class="menu">
+            <div class="sub-menu"></div>
+        </div>
+    </div>
+</body>
+</html>

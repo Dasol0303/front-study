@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 20px;
+
+            /* transition-property: background-color width; */
+            transition-property: all;
+            transition-duration: 1.5s;
+            /* transition-delay: 1s; */
+            transition-timing-function: cubic-bezier(0.78, -0.2, 0.33, 1.37);
+
+            /* 
+                기존 클래스 transition : 마우스올릴때O, 내릴때O
+                hover 클래스 transition : 마우스올릴때O, 내릴때X
+            */
+        }
+
+        .box:hover {
+            background-color: blue;
+
+            /* transition-property: all;
+            transition-duration: 0.5s; */
+
+            width: 300px;
+        }
+
+        .container:hover .box {
+            background-color: blue;
+            width: 500px;
+
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <div class="container">
+        <div class="box" style="transition-timing-function: linear;"></div>
+        <div class="box" style="transition-timing-function: ease;"></div>
+        <div class="box" style="transition-timing-function: ease-in;"></div>
+        <div class="box" style="transition-timing-function: ease-out;"></div>
+        <div class="box" style="transition-timing-function: ease-in-out;"></div>           
+    </div>
+</body>
+</html>
