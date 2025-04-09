@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+
+            background-color: blue;
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        .a {
+            /*
+            animation-name: ;
+            animation-duration: ;
+            animation-fill-mode: ;
+            animation-iteration-count: ;
+            animation-direction: ;
+            이거 다 밑에 한 줄로 적어놓은 속성들
+            
+            + 코드 정리를 할 때에 클래스에 애니 연결만 해주고 싶다면 주석 안에 있는 속성을
+            모두 겹치는 부모요소 및 클래스에 걸어주고 코드를 정리한다.
+            */
+
+            animation: ani2 3s infinite alternate;
+        }
+
+        .b {
+            animation: ani3 3s infinite alternate;
+        }
+
+        .c {
+            animation: ani4 3s infinite alternate;
+        }
+
+
+        @keyframes ani2 {
+            0% { 
+                background-color: blue;
+                /*
+                top, left, rignt, bottom: px과 같이 포지션으로도 지정가능
+                position:relative는 클래스에 걸어준다.
+                */
+                transform: translate(0,0);}
+            50% { 
+                background-color: orange;
+                transform: translate(100px,0px);}
+            100% { 
+                background-color: pink;
+                transform: translate(200px,0px);}
+        }
+
+        @keyframes ani3 {
+            0% { 
+                background-color: blue;
+                transform: translate(0,0);}
+            50% { 
+                background-color: orange;
+                transform: translate(0px,100px);}
+            100% { 
+                background-color: pink;
+                transform: translate(0px,200px);}
+        }
+
+        @keyframes ani4 {
+            0% { 
+                background-color: blue;
+                transform: translate(0,0);}
+            50% { 
+                background-color: orange;
+                transform: translate(100px,100px);}
+            100% { 
+                background-color: pink;
+                transform: translate(200px,200px);}
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box a"></div>
+    <div class="box b"></div>
+    <div class="box c"></div>
+    
+</body>
+</html>
