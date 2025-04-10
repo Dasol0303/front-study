@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: grid;
+
+            /* grid-template-rows: 100px 100px 100px; */
+            grid-template-rows: repeat(3, 100px);
+            grid-template-columns: 100px 100px 100px;
+        
+            grid-template-areas: 
+            "header header header"
+            "sidebar content content"
+            "footer footer footer" ;
+        }
+
+        #header {
+            background-color: orange;
+            grid-area: header;
+        }
+
+        #sidebar {
+            background-color: lightseagreen;
+            grid-area: sidebar;
+        }
+
+        #content {
+            background-color: lightsalmon;
+            grid-area: content;
+        }
+
+        #footer {
+            background-color: purple;
+            grid-area: footer;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div id="header"></div>
+        <div id="sidebar"></div>
+        <div id="content"></div>
+        <div id="footer"></div>
+
+    </div>
+
+</body>
+</html>
