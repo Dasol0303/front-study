@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;        
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .item {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            
+            /*float:left; */
+            /*display: inline-block;*/
+        }
+
+        .container {
+            display: flex;
+
+            /*flex-direction: column;*/
+            /*flex는 보통 가로 배치에 사용하는데 
+            column처럼 기존 흐름의 형태가 변수로 사용되기 때문(마우스 커서를 올릴 때와 같은 특정조건) */
+        
+            flex-wrap: wrap;
+            /*화면 크기에 따른 줄바꿈*/
+
+            /* flex-flow: row wrap; */
+            /*            direction wrap*/
+
+            background-color: lightblue;
+            height: 400px;
+
+            justify-content: space-around;
+            align-items: center;
+            /* align-content: center; */
+
+        }
+
+        .content-center {
+            /* margin: 0 auto; */
+            /* text-align: center; */
+            /* padding: 40px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*
+            justify-content: center;
+            align-items: center;
+            -> 가로 세로 가운데 정렬*/
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item content-center">5</div>
+        <div class="item" style="align-self: flex-end;">6</div>
+    </div>
+</body>
+</html>
