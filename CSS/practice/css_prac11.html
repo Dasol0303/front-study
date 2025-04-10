@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 700px;
+
+            border: 1px solid black;
+            background-color: white;
+
+            margin: 0 auto;
+            margin-top: 30px;
+
+
+        }
+
+        #header {
+            height: 100px;
+
+            display: flex;
+            justify-content: space-between
+            
+        }
+        .main {
+            width: 200px;
+            
+            background-color: red;}
+        .my {
+            width: 100px;
+
+            background-color: red;}
+
+            #a {
+                width: 700px;
+                height: 300px;
+
+                display: flex;
+            }
+
+            #sidebar-left {
+                width: 70%;
+                height: 300px;
+
+                background-color: orange;
+
+                display: flex;
+            
+                flex-wrap: wrap;
+
+                align-items: center;
+                justify-content: space-around;
+
+                column-gap: 40px;
+            }
+            .box {
+                width: 100px;
+                height: 50px;
+
+                background-color: black;
+
+                transition-property: all;
+                transition-duration: 1s;
+            }
+            .box:hover {
+                transform: scale(1.5);
+            }
+
+            #sidebar-right {
+                width: 30%;
+                height: 300px;
+
+                background-color: green;
+            }
+
+            #footer {
+                width: 100%;
+                height: 100px;
+
+                background-color: blue;
+            }
+
+            p {
+                margin: 0 auto;
+                color: white;
+            }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="main"><p>메인메뉴</p></div>
+            <div class="my"><p>마이페이지</p></div>
+        </div>
+
+        <div id="a">
+            <div id="sidebar-left">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            
+                <div id="sidebar-right"><p>aside</p></div>
+        </div>
+        <div id="footer"><p>footer</p></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 700px;
+            height: 500px;
+            border: 1px solid black;
+
+            margin: 0 auto; /*가운데 배치!!!*/
+            margin-top: 50px;
+        }
+
+        .header {
+            height: 100px;
+
+            /* background-color: lightblue; */
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-menu {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+        }
+        .mypage {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+
+
+        .main {
+            height: 300px;
+
+            background-color: lightblue;
+            display: flex;
+        }
+        .section {
+            /* width: 490px; */
+            width: 70%;
+            height: 300px;
+
+            background-color: orange;
+            display: flex;
+            flex-wrap: wrap; /*줄바꿈 해주고*/
+
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        
+        }
+        .article {
+            width: 100px;
+            height: 50px;
+            background-color: black;
+
+            margin: 30px;
+
+            transition-property: all;
+            transition-duration: 0.5s;
+        }
+        .article:hover {
+            /* width: 150px;
+            height: 75px;
+            이렇게 하게 되면 다른 영역과 겹쳐서 밀리는 현상 발생 */
+            transform: scale(1.4);
+            /*scale(1.5)(1.5) x축크기 y축크기 scale(1.5) xy둘다*/
+        }
+
+        .aside {
+            width: 30%;
+            height: 300px;
+
+            background-color: green;
+        }
+
+        .footer {
+            height: 100px;
+
+            background-color: blue;
+        }
+
+
+
+        .align-center-font-white {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /*내부 글자 설정1 클래스 이름 걸어주는 방법*/
+
+
+
+        .align-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .font-white {
+            color: white;
+        }
+    /*내부 글자 설정1 개별 클래스 이름 걸어주는 방법*/
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="main-menu align-center-font-white">메인메뉴</div>
+            <div class="mypage align-center-font-white">마이페이지</div>
+        </div>
+
+        <div class="main">
+            <div class="section">
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+                <div class="article"></div>
+            </div>
+            <div class="aside align-center-font-white">aside</div>
+        </div>
+
+        <div class="footer align-center-font-white">footer</div>
+    </div>
+
+</body>
+</html>
