@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 500px;
+            background-color: lightgray;
+
+            transition-duration: 3s;
+            transition-property: all;
+        }
+        .container:hover > .box {
+            animation-play-state: running;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+
+            animation-play-state: paused;
+
+            border: 1px solid black;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        .mouse {
+            display: flex;
+            animation-name: ani-mouse;
+        }
+        .mouse:hover > .box {
+            animation-play-state: running;
+        }
+
+        .red-box {
+            background-color: red;
+
+            animation-name: ani-red;
+        }
+        .blue-box {
+            background-color: blue;
+
+            animation-name: ani-blue;
+        }
+        .black-box {
+            background-color: black;
+
+            animation-name: ani-black;
+        }
+        .green-box {
+            background-color: green;
+
+        }
+        .orange-box {
+            background-color: orange;
+
+        }
+
+        @keyframes ani-red {
+            0% {
+                width: 100px;
+                height: 100px;
+            }
+            100% {
+                width: 400px;
+            }
+        }
+        @keyframes ani-blue {
+            0% {
+                background-color: blue;
+            }
+            100% {
+                background-color: purple;
+            }
+        }
+        @keyframes ani-black {
+            0% {
+                transform: translate(0,0);
+            }
+            100% {
+                transform: translate(200px,0);
+            }
+        }
+        @keyframes ani-mouse {
+            0% {
+                border: 1px solid black;
+            }
+            100% {
+                border: 10px solid red;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="red-box box"></div>
+        <div class="blue-box box"></div>
+        <div class="black-box box"></div>
+        <div class="mouse">
+            <div class="green-box box"></div>
+            <div class="orange-box box"></div>
+        </div>
+    </div>
+</body>
+</html>
