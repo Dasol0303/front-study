@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .em-box {
+            background-color: lightblue;
+            width: 700px;
+            font-size: 20px;
+            min-width: 500px;
+            /* min과 max 존재 
+            위의 min-width:500px;의 의미 -> 500px 미만으로는 변화 X, 500px 유지*/
+        }
+    
+        /* .em1 {font-size: 18px;}
+        .em2 {font-size: 24px;}
+        .em3 {font-size: 32px;} */
+
+        .em1 {font-size: 1.2em;}
+        .em2 {font-size: 1.5em;}
+        .em3 {font-size: 2em;}
+
+        .rem1 {font-size: 1.5rem;}
+        .rem2 {font-size: 2rem;}
+
+        .footer {font-size: 2rem;}
+
+        @media screen and (max-width:700px) {
+
+            /* .em-box {width: 500px;} */
+            .em-box {width: 100%;}
+
+        }
+
+        @media screen and (max-width:500px) {
+
+            /* .em1 {font-size: 16px;}
+            .em2 {font-size: 20px;}
+            .em3 {font-size: 28px;} */
+
+            .em-box { font-size: 16px; }
+
+            html {font-size: 10px;}
+        }
+
+
+</style>
+
+</head>
+<body>
+
+    <div class="em-box">  
+        <p class="em1">em1</p>
+        <p class="em2">em2</p>
+        <p class="em3">em3</p>
+    </div>
+
+    <div class="rem-box">  
+        <p class="rem1">rem1</p>
+        <p class="rem2">rem2</p>
+    </div>
+
+    <div class="footer">
+        <p>footer1</p>
+        <p>footer2</p>
+    </div>
+
+    <p>basic p tag</p>
+
+
+</body>
+</html>

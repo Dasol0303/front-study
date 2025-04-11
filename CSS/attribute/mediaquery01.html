@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: antiquewhite;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        p {
+            font-weight: bold;
+        }
+
+        /*
+            @media not print and (...)
+            @media only screen and (...)
+        */
+
+        @media screen and (max-width:768px) {
+            /* ▲ 평소에는 가만히 있다가 ()안에 있는 조건을 만족하면 스타일을 주겠다*/
+            /* 지금 걸어준 속성은 -> 화면 사이즈를 줄여서 .box의 사이즈가 몇이 되었을 때 조건 실행 */
+            /* style 속성*/
+            .box {
+                background-color: cornflowerblue;
+            }
+        }
+
+        @media screen and (max-width:480px) {
+            .box {
+                background-color: lightgreen;
+            }
+
+            h2 {
+                color: blue;
+            }
+            p {
+                font-weight: normal;
+                font-size: 12px;
+                /* em rem -> mediaquery02 파일*/
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <h2>h2 tag</h2>
+        <p>p tag</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, excepturi deleniti. Saepe assumenda impedit non alias voluptatem ullam perferendis quisquam reprehenderit ab quidem! Tempora laboriosam ab nostrum nulla. Reprehenderit, optio!</p>
+    </div>
+
+</body>
+</html>
