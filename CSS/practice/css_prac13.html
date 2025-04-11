@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 700px;
+            margin: 0 auto;
+            margin-top: 50px;
+
+            border: 2px solid black;
+            min-width: 350px;
+        }
+        
+        
+        /*------------- header------------ */
+        .header {
+            height: 200px;
+
+            background-color: purple;
+            display: flex;
+        }
+        .header-box {
+            width: 400px;
+            height: 50%;
+            border: 2px solid black;
+        }
+
+        /*------------- main------------ */
+        .main {
+            height: 300px;
+
+            background-color: bisque;
+            display: flex;
+        }
+
+        .side-a {
+            width: 40%;
+            height: 100%;
+
+            background-color: cadetblue;
+        }
+        .side-b {
+            width: 60%;
+            height: 100%;
+
+            background-color: red;
+        }
+        .side-b-box {
+            height: 50%;
+
+            background-color: aqua;
+            border: 2px solid black;
+        }
+        /*-------------footer------------ */
+        .footer {
+            width: 800px;
+            height: 200px;
+
+            background-color: blueviolet;
+            display: flex;
+        }
+        .footer-box {
+            width: 200px;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        /*-------------box color------------ */
+        .yellow {background-color: yellow;}
+        .gray {background-color: gray;}
+        .lightgreen {background-color: lightgreen;}
+        .pink {background-color: pink;}
+        .orange {background-color: orange;}
+        .green {background-color: green;}
+        .yellow {background-color: yellow;}
+
+
+        /* ------------------mediaquery---------------------- */
+        @media screen and (max-width:700px) {
+            .container {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            .footer {
+                width: 100%;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .footer-box {
+                width: 50%;
+                height: 50%;
+            }
+            
+        }
+
+        @media screen and (max-width:500px) {
+            .header {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .header-box {
+                width: 100%;
+            }
+
+            .main {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+            .side-a {
+                width: 100%;
+                height: 100px;
+            }
+            .side-b {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        @media screen and (max-width:350px) {
+
+            .footer {
+                width: 100%;
+                height: 800px;
+            }
+            .footer-box {
+                width: 100%;
+                height: 25%;
+            }
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-box yellow"></div>
+            <div class="header-box gray"></div>
+        </div>
+
+        <div class="main">
+            <div class="side-a lightgreen"></div>
+            <div class="side-b">
+                <div class="side-b-box yellow"></div>
+                <div class="side-b-box pink"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-box yellow"></div>
+            <div class="footer-box orange"></div>
+            <div class="footer-box yellow"></div>
+            <div class="footer-box green"></div>
+        </div>
+    </div>
+</body>
+</html>
