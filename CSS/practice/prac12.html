@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            margin-top: 50px;
+
+            border: 2px solid black;
+        }
+        
+        
+        /*------------- header------------ */
+        .header {
+            height: 200px;
+
+            background-color: purple;
+            display: flex;
+        }
+        .header-box {
+            width: 400px;
+            height: 50%;
+            border: 2px solid black;
+        }
+
+        /*------------- main------------ */
+        .main {
+            height: 400px;
+
+            background-color: bisque;
+            display: flex;
+        }
+
+        .side-a {
+            width: 40%;
+            height: 100%;
+
+            background-color: cadetblue;
+        }
+        .side-b {
+            width: 60%;
+            height: 100%;
+
+            background-color: red;
+        }
+        .side-b-box {
+            height: 50%;
+
+            background-color: aqua;
+            border: 2px solid black;
+        }
+        /*-------------footer------------ */
+        .footer {
+            width: 800px;
+            height: 200px;
+
+            background-color: blueviolet;
+            display: flex;
+        }
+        .footer-box {
+            width: 200px;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        /*-------------box color------------ */
+        .yellow {background-color: yellow;}
+        .gray {background-color: gray;}
+        .lightgreen {background-color: lightgreen;}
+        .pink {background-color: pink;}
+        .orange {background-color: orange;}
+        .green {background-color: green;}
+        .yellow {background-color: yellow;}
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-box yellow"></div>
+            <div class="header-box gray"></div>
+        </div>
+
+        <div class="main">
+            <div class="side-a lightgreen"></div>
+            <div class="side-b">
+                <div class="side-b-box yellow"></div>
+                <div class="side-b-box pink"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-box yellow"></div>
+            <div class="footer-box orange"></div>
+            <div class="footer-box yellow"></div>
+            <div class="footer-box green"></div>
+        </div>
+    </div>
+</body>
+</html>
