@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>browser02</h1>
+
+    <script>
+        console.log('console 출력');
+        //alert('alert 호출'); //경고창을 띄우는 코드 
+
+        // //confirm 확인
+        // let result1 = confirm("진행 하시겠습니까?"); //확인: true  취소: false
+        // console.log(result1);
+
+        //if(result1)  .... else ...
+
+        //prompt 입력받기 창
+        // let result2 = prompt("너의 이름은?");
+        // console.log(result2);
+
+        // window.open('https://www.netflix.com/kr/', '_blank');
+        // window.open('https://www.netflix.com/kr/', '_self'); //기능강제
+        window.open('https://www.netflix.com/kr/', 'netflix', 'width=300', 'height=250'); //새로운 팝업창 띄우기
+
+        window.open('https://www.tving.com', 'tving', 'width=250', 'height=20');
+
+        window.open('popup.html', 'popup', 'width=250', 'height=200');
+
+    </script>
+
+</body>
+</html>

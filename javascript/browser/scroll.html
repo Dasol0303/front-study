@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 5000px;
+            height: 5000px;
+        }
+
+        #container {
+            position: fixed;
+            left:120px;
+            top:120px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>scroll.html</h1>
+
+    <div id="container">
+        <button onclick="scrollToFunc()">scrollTo</button> 
+        <!-- onclick으로 함수 연결 가능!! -->
+        <button onclick="scrollByFunc()">scrollBy</button>
+    </div>
+
+    <script>
+
+        function scrollToFunc(){
+            //window.scrollTo(0, 0);  //x:0 y:0
+            //left:0  top:0
+            window.scrollTo( {
+                left:0,
+                top:0,
+                behavior:'smooth'
+            });
+        }
+
+        function scrollByFunc(){
+            //window.scrollBy(500, 500); //left:500  top:500
+                window.scrollBy( {
+                    left:500,
+                    top:500,
+                    behavior:'smooth'
+                });
+        }
+
+    </script>
+
+
+</body>
+</html>
