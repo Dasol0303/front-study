@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+        <style>
+            .bg-red {
+                background-color: red;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <p>글자</p>
+        </div>
+
+        <div class="container">
+            <div class="box a" id="box-a-id">A</div>
+            <div class="box b">B</div>
+            <div class="box c">C</div>
+        </div>
+
+        <!-- <div id="box-a-id"></div> -->
+
+        <p id="target">text<span style="display: none;">hidden</span></p>
+
+        <script>
+            const boxA = document.getElementById('box-a-id'); //특정 id를 가진 요소를 선택하겠다
+            console.log(boxA); //콘솔 창에 출력하겠다!!
+            //id는 페이지 전체에서 유니크하게 하나만 가지고 있어야함!! 
+            //위에서도 하나만 잡힘(=====!!!주의!!!=====)
+
+            const boxes = document.getElementsByClassName('box');
+            console.log(boxes);
+            console.log(boxes[2]);
+
+
+            const boxACss = document.querySelector('#box-a-id'); //css 선택자 -> 자유도 높음
+            //실제 css에서 쓰는 선택자처럼 씀!!
+            console.log(boxACss);
+
+            const boxesCss = document.querySelectorAll('.box');
+            console.log(boxesCss);
+
+
+            console.log( document.getElementsByClassName('c')); //하나밖에 없어도 배열인 것처럼 보여줌!!
+            console.log( document.getElementsByClassName('c')[0]); //가능!!
+
+            const cBoxes = document.getElementsByClassName('c');
+            cBoxes[0];
+                            //document.querySelector('#target'); -> querySelector에서는 # 붙여주기!!
+            const p_target = document.getElementById('target');
+            console.log(p_target.textContent);
+            console.log(p_target.innerText);
+            console.log(p_target.innerHTML);
+
+            p_target.textContent = 'textContent로 접근해서 수정';
+            p_target.innerText = 'innerText 접근해서 수정함'; //->위에거에서 덮어쓰기 되가지고 얘 출력!!
+            //p_target.innerHTML = 'innerHTML 로 <strong>접근해서</strong> 수정했음'; //태그 인식
+            p_target.innerText = 'innerHTML 로 <strong>접근해서</strong> 수정했음'; //글자 인식
+
+        </script>
+
+    </body>
+</html>
