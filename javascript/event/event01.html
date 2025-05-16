@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <h1 id="target">이벤트 등록</h1>
+
+    <button onclick="event1()">이벤트 버튼1</button>
+
+    <button id="btn_evt2">이벤트 버튼2</button> 
+
+    <button id="btn_evt3">이벤트 버튼3</button>
+
+    <div id="box">박스 버튼대신에</div>
+
+    <script>
+
+        function event1() {
+            console.log('event1()');
+            //노드.style.속성 = 속성값;
+            //노드는 id 주고 선택하는게 제일 만만함
+            document.getElementById('target').style.color = 'red';
+        }
+
+        function event2(){
+            console.log('event2()');
+            document.getElementById('target').style.fontSize = '40px';
+        }
+
+        function event3(){
+            console.log('event3()');
+        }
+
+        document.getElementById('btn_evt2').onclick = event2;
+        //btn_evt2 너 누르면 event2 실행해!!
+        const btn_evt3 = document.getElementById('btn_evt3');
+        btn_evt3.addEventListener('click', event3); //click이 실행되면 event3를 불러옴?
+
+        document.querySelector("#box").addEventListener('click', ()=>{
+                console.log('버튼대신에 있는 div 박스 클릭함');
+                //div box 배경색을 orange
+                //노드.style.속성 = 속성값;
+                //background-color -> - 는 빼기 기호로 인식!!
+                document.querySelector('#box').style.backgroundColor = 'orange';
+        });
+
+        document.querySelector("#box").addEventListener('dblclick', ()=>{
+            console.log('버튼대신에 있는 div 박스 더블클릭함');
+            location.href = 'https://netflix.com'; //-> 클릭 순간 바로 이동 효과!!(현재 페이지에서 이동!)
+
+            //<a href="https://netflix.com">
+        });
+
+    </script>
+
+    
+</body>
+</html>

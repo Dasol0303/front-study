@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .big-font {
+            font-size: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <p id="pid">text 적당히 글자</p>
+
+    <a id="aid" href="https://netflix.com">넷플릭스 이동</a>
+
+    <div id="container">
+        <p>기존 p태그</p>
+    </div>
+    
+
+    <!-- 자바스크립트 코드로 클래스 추가!! -->
+    <script>
+        //클래스 조작!  -> 노드.classList.add   노드.classList.remove   노드.classList.toggle
+        document.getElementById('pid').classList.add('blue');
+        
+        document.getElementById('pid').classList.add('red');// 스타일에서 적용되는 마지막 색 확인하기!
+
+        document.getElementById('pid').addEventListener('click', ()=>{
+            document.getElementById('pid').classList.toggle('big-font');
+        }); //toggle > 켰다 껐다 하겠다? - 글자 누르기!!
+
+        //속성 조작
+
+        //노드.getAttribute     노드.setAttribute       노드.removeAttribute  
+        
+        console.log(document.getElementById('pid').getAttribute('class'));
+
+        const a_id = document.getElementById('aid');
+        // a_id라는 id를 aid가 있는 곳에 안보이게 추가!
+        console.log(a_id.getAttribute('href'));
+        a_id.setAttribute('href', 'https://tving.com');
+        a_id.setAttribute('target', '_blank');
+
+        a_id.removeAttribute('target');
+
+
+        const divCon = document.getElementById('container');
+
+        const newP = document.createElement("p"); //<p> 태그를 만들겠다!!
+        const txtNode = document.createTextNode("p태그 내부 글씨 Text");
+        const attrNode = document.createAttribute("class"); //너 attrNode라는 클래스 속성 가져라!!!!!
+        attrNode.value = 'red'; // class="red"
+
+        newP.appendChild(txtNode); //p태그에 내부 글씨노드 추가     <p>p태그 내부 글씨 Text</p>
+        newP.setAttributeNode(attrNode); //p태그에 속성노드 추가   <p class="red">p태그 내부 글씨 Text</p>
+    
+        divCon.appendChild(newP); //자식으로 추가! <div id="container"><p class="red">p태그 내부 글씨 Text</p></div>
+        //append를 하게 되면 뒤에 추가하는 형식?
+
+        //divCon.innerHTML = '<p class="blue">p태그 내부 글씨 Text</p>'; //얘는 그냥 저장 개념이라 위처럼 우르르 쓰는게 나은듯?
+        
+        //순수javascript  vs  jQuery 라이브러리  vs  React 데이터기반 처리 방식
+
+        // $('#container').append('<p class="blue">p태그 내부 글씨 Text</p>');
+
+        // if(true) 요소를추가
+        // 반복문 [1,2,3] 화면에 요소를 추가
+    
+    
+    </script>
+
+</body>
+</html>

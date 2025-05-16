@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <form> -->
+        <input type="text" id="input_text">
+    <!-- </form> -->
+
+    <script>
+        const input_text = document.getElementById('input_text');
+
+        //키가 눌렸는지 확인하기 위해 제일 먼저 많이 사용됨
+        input_text.addEventListener('keydown', (event)=>{
+            console.log('keydown 실행됨');
+            console.log(event);
+
+            console.log(event.keyCode);
+            console.log(event.shiftKey);
+
+            if(event.keyCode == 13){
+                alert("엔터가 눌림");
+            }
+        });
+
+        //사용 자제 (deprecated > 없어지거나 사용 잘 안하니까 사용하지 마라~)
+        // input_text.addEventListener('keypress', ()=>{
+        //     console.log('keypress 실행됨');
+        // });
+
+        input_text.addEventListener('keyup', ()=>{
+            console.log('keyup 실행됨');
+        });
+
+        input_text.addEventListener('focus', ()=> {
+            console.log('focus 잡힘');
+        });
+
+        input_text.addEventListener('blur', ()=> {
+            console.log('blur 포커스 풀림');
+        });
+
+
+    </script>
+
+</body>
+</html>
