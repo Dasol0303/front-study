@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form_main">
+
+        <br>
+
+        <p>토핑</p>
+        치즈<input type="checkbox" id="chk_cs" class="chk_option">
+        크림<input type="checkbox" id="chk_cr" class="chk_option" checked>
+        아이스크림<input type="checkbox" id="chk_ic" class="chk_option">
+        <button id="btn_fullOption" type="button">모든 토핑 선택</button>
+
+        <br><br>
+
+        대<input type="radio" id="rd_large" name="size" value="30">
+        중<input type="radio" id="rd_medium" name="size" value="20">
+        소<input type="radio" id="rd_small" name="size" value="10">
+
+        <br><br>
+        <select id="select_order">
+            <option value="here">매장식사</option>
+            <option value="togo">포장</option>
+            <option value="delivery">배달</option>
+        </select>
+        <button type="button" id="btn_check">셀렉트박스확인</button>
+
+    </form>
+    
+    <script>
+
+        console.log(document.getElementById('select_order').value);
+        document.getElementById('btn_check').addEventListener('click', ()=>{
+            console.log(document.getElementById('select_order').value);
+
+            const select_options = document.querySelectorAll('#select_order option');
+
+            //for   for in      for of
+            for(let option of select_options){      //select_options[0] [1] [2]
+                console.log("option : " + option.value + " " + option.selected);
+            }
+
+        });
+
+        //p.textContent -> 읽어올 수도 있고
+        //p.textContent = 'abc'; -> 값 세팅도 가능!!
+        console.log(document.getElementById('chk_cs').checked);//chk_cs에 체크 되어있냐!?
+        console.log(document.getElementById('chk_cr').checked);
+        document.getElementById('chk_ic').checked = true;
+
+        document.querySelector('#btn_fullOption').addEventListener('click', ()=>{
+            // document.getElementById('chk_cs').checked = true;
+            // document.getElementById('chk_cr').checked = true;
+            // document.getElementById('chk_ic').checked = true;
+
+            const chk_options = document.getElementsByClassName('chk_option');
+            for(let i=0; i<chk_options.length; i++) {
+                chk_options[i].checked = true;
+            }
+        });
+
+        console.log(document.getElementById('rd_large').checked); //체크되어있음?
+        console.log(document.getElementById('rd_large').value); //30
+        document.getElementById('rd_medium').checked = true; //페이지 켰을 때 자동으로 강제 체크 걸어주기
+        document.getElementById('rd_small').checked = true; //radio 버튼 특성상 중복 X
+
+    </script>
+
+
+</body>
+</html>

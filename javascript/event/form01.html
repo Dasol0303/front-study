@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>form01</h1>
+
+    <form id="form_id"> <!-- action="http:~" -> 이동하거나 전송하려는 장소 -->
+        <label>아이디 : <input type="text" id="input_id" placeholder="아이디입력"></label> <br/>
+        <label>비번 : <input type="password" id="input_pw"></label> <br/> <br/>
+
+        <button type="button" id="btn_normal">그냥버튼</button>
+        <button type="submit" id="btn_submit">submit버튼</button>
+
+        <br>
+        <button type="button" id="btn_extra">여분의버튼</button>
+    </form>
+
+    <script>
+
+        const input_id = document.getElementById("input_id");
+        const input_pw = document.getElementById("input_pw");
+
+        const input_button = document.getElementById("btn_normal");
+        const input_submit = document.getElementById("btn_submit");
+
+         //사용자가 입력한 입력값 읽어오기!!
+        btn_normal.addEventListener('click', ()=>{
+            console.log(input_id.value);
+            console.log(input_pw.value);
+
+            input_id.value = 'qqqqq'; // 버튼 누르면 이 위치에 뜨게하기!!
+            input_pw.focus(); // 버튼 누르면 password 쪽으로 포커스 잡힘!!
+
+            //focus() -> 포커싱을 가라
+            //click() -> 눌려라?
+            //submit()
+            //-> 전달 가능해짐
+        });
+
+        input_id.addEventListener('focus', ()=>{
+            console.log('input_id focus잡힘');
+        });
+
+        input_pw.addEventListener('focus', ()=>{
+            console.log('input_pw focus잡힘');
+        });
+        
+        input_id.addEventListener('keydown', (event)=>{
+
+            if(event.keyCode == 13) {
+                console.log("엔터키가 눌렸다.");
+                event.preventDefault(); //submit으로 가는 거 막아줌!!
+                input_pw.focus(); // password 칸으로 포커싱 옮겨주기
+            }
+        });
+
+        document.getElementById('btn_extra')
+                .addEventListener('click', ()=>{
+                    console.log("btn_extra버튼 눌림");
+                    btn_normal.click(); //btn_normal 요소에 클릭효과를 발생시킴
+                });
+
+        document.getElementById('form_id')
+                .addEventListener('submit', (event)=> { //발생한 이벤트 정보 전달 
+                    console.log('폼 submit 발생함');
+                    event.preventDefault();
+                    //기본 발생한 이벤트를 취소
+                    //submit 이벤트 : form 안에 데이터 정리 -> 다른 페이지/서버 폼 전송
+                    //                                   -> 페이지 새로고침
+
+                    //form 전송하는 대상 경로 action="속성값" 경로로 전송
+                    //action="" 비어있으면 -> 동일한 페이지 (새로고침처럼 보임)
+
+                    //submit 멈춰둠
+                    //검증함
+                    //비어있는지 + 띄어쓰기 제외(trim)
+                    if(input_id.value.trim() == '') { // 비어있냐!?
+                        alert('아이디 필수입력임. 입력하셈');
+                        input_id.value = input_id.value.trim();
+                        input_id.focus(); //비번만 입력했을 때 포커스 아이디로 옮기기!
+                        return; //break;
+                    }
+
+                    //검증 다 통과하면?
+
+                    //다시 submit 진행
+                    document.getElementById('form_id').submit();
+
+        });
+
+
+    </script>
+
+</body>
+</html>
