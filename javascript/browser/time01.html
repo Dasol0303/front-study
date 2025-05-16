@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: darkolivegreen;
+            position:relative;
+            left: 0px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <p id="pid">기본 텍스트</p>
+
+    <div class="box"></div>
+
+    <button onclick="clearIntervalBox()">박스 멈춰라~</button>
+
+    <p id="clock"></p>
+
+    <script>
+
+        //setTimeout(콜백함수, 시간);
+        setTimeout(()=>{
+            document.getElementById('pid').textContent = "3초 지나고 텍스트 바뀜";
+        }, 3000);
+
+        setTimeout(()=>{
+            document.getElementById('pid').style.color = 'red';
+        }, 5000);
+
+        //setInterval(콜백함수, 시간) : 시간마다 콜백함수 반복 실행
+        const boxMoveInterval = setInterval(()=>{ // 클리어(정지?) 해야하면 const에 이름 담아주기!!
+            const box = document.getElementsByClassName('box')[0]; //첫번째에 있는 박스 선택
+
+            console.log(box.style.left);
+            //box.style.left = '50px'; //  50px -> 100px -> 150 += 50
+
+            let leftValue = box.style.left; //50px
+
+            if(leftValue == '600px'){
+                box.style.left = '0px';
+            } else {
+                leftValue = leftValue.replace('px', '');// '50' + 50 = '5050'
+                box.style.left = Number(leftValue) + 50 + 'px'; //원래 있던 값에서 +50해서 다음 px이 될거임!!
+                //무슨 소리야..........?
+            }
+
+        }, 500);
+
+        function clearIntervalBox(){
+            clearInterval(boxMoveInterval); //기존에 작동하고 있는 boxMoveInterval 을 멈춰라 (clear)
+        }
+
+
+        setInterval(()=>{
+
+            const current = new Date();
+            const time = String(current.getHours()).padStart(2, '0')    //14   04
+                + ":" + current.getMinutes() 
+                + ":" + current.getSeconds();
+
+            document.getElementById('clock').textContent = time;
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
