@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <form id="form_id">
+        <input type="text" id="loginId" placeholder="아이디"><br>
+        <input type="password" id="loginPw" placeholder="비밀번호"><br>
+        <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+    </form>
+
+<script>
+//코드작성
+
+    const input_id = document.getElementById("loginId");
+    const input_pw = document.getElementById("loginPw");
+    const input_submit = document.getElementById("form_id");
+
+        input_id.addEventListener('keydown', (event)=>{ //아이디 입력 엔터 후 비번 칸으로!
+            if(event.keyCode == 13) {
+                event.preventDefault();
+                input_pw.focus();
+            }
+        });
+
+        document.getElementById('form_id')
+                .addEventListener('submit', (event)=> {
+                    event.preventDefault();
+
+                    if(input_id.value.trim() == '') { 
+                        alert('아이디 필수입력.');
+                        input_id.value = input_id.value.trim();
+                        input_id.focus(); //비번만 입력했을 때 포커스 아이디로 옮기기!
+                        return;
+                    }
+
+                    if(input_pw.value.trim() == '') { 
+                        alert('아이디 필수입력.');
+                        input_id.value = input_id.value.trim();
+                        input_id.focus(); //비번만 입력했을 때 포커스 아이디로 옮기기!
+                        return;
+                    }
+
+                    //다시 submit 진행
+                    document.getElementById('form_id').submit();
+
+        });
+
+
+</script>
+</body>
+</html>

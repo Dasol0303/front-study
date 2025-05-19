@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <form id="formLogin">
+        <input type="text" id="loginId" placeholder="아이디"><br>
+        <input type="password" id="loginPw" placeholder="비밀번호"><br>
+        <!-- <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br> -->
+        <button id="btnLogin" type="submit">로그인 시도</button><br>
+    </form>
+
+<script>
+//코드작성
+
+    const loginId = document.getElementById('loginId');
+    const loginPw = document.getElementById('loginPw');
+    const formLogin = document.getElementById('formLogin');
+
+    function tryLogin() {
+        loginId.value = '';
+        loginPw.value = '';
+    }
+
+    loginId.addEventListener("keydown", (event)=> { //어떤 키가 눌렸는지 확인 할 수 있다!!
+        
+        //if(event.keyCode == 13) { //deprecated
+        if(event.key == "Enter") {
+            event.preventDefault();
+            loginPw.focus();
+        }
+    });
+
+    //비밀번호 입력칸에서 엔터 -> 로그인 버튼 누른것과 동일한 기능
+    loginPw.addEventListener("keydown", (event)=> {
+        if(event.key == "Enter") {
+            event.preventDefault();
+            //1) 똑같은 코드
+            //loginId.value = '';
+            //loginPw.value = '';
+
+            //2) 같은 함수 호출
+            //tryLogin();
+
+            //3) 로그인 버튼 클릭 이벤트 발생
+            document.getElementById('btnLogin').click(); //클릭으로 버튼을 누른 것과 같은 효과 발생
+            //document.getElementById('btnLogin').focus(); //포커스이동 + 클릭
+        }
+    });
+
+    formLogin.addEventListener('submit', (event)=>{
+        event.preventDefault();
+
+        loginId.value = loginId.value.trim(); //trim을 먼저 정해주고 띄어쓰기를 공백으로 만들어줌
+        loginPw.value = loginPw.value.trim();
+
+        if(loginId.value == '') { //비어있냐!
+            alert('아이디 입력해주세요.');
+            loginId.focus();
+            return;
+        }
+
+        if(loginPw.value == '') { //비어있냐!
+            alert('비밀번호 입력해주세요.');
+            loginPw.focus();
+            return;
+        }
+
+        //이전 검증모두 처리 이후, submit 호출
+        //formLogin.submit();
+        //submit 실행된것처럼 -> 대신에 아이디비번 공백!
+        tryLogin();
+    });
+
+
+</script>
+</body>
+</html>
