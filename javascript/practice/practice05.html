@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.box {
+width:100px;
+height:100px;
+border: 1px solid black;
+}
+.back-red{
+background-color: red;
+}
+.back-blue{
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class="box"></div>
+<button onclick="changeColor()">배경색 바꾸기</button>
+
+<script>
+/* 코딩부분 */
+    function changeColor() {
+        let boxColor = prompt("1 또는 2를 입력하세요. 1:빨간색, 2:파란색");
+        console.log(boxColor);
+
+        const box = document.getElementsByClassName('box')[0];
+
+        if(boxColor == 1) {
+            console.log('red');
+            //box.style.backgroundColor = 'red';
+
+            // box.classList.add('back-red');
+            // box.classList.remove('back-blue');
+
+            box.setAttribute('class', 'box back-red');
+            //document.querySelector('.box').style.backgroundColor = 'red';
+        } else if (boxColor == 2) {
+            console.log('blue');
+
+            //box.style.backgroundColor = 'blue';
+
+            // box.classList.add('back-blue');
+            // box.classList.remove('back-red');
+
+            box.setAttribute('class', 'box back-blue');
+            //document.querySelector('.box').style.backgroundColor = 'blue';
+        } else {
+            alert("잘못 입력했습니다...");
+        }
+    }
+
+
+</script>
+</body>
+</html>
