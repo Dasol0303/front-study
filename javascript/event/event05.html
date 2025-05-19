@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <!-- 박스가 많아지면 반복문 처리~ -->
+
+    
+    <script>
+        const box1 = document.getElementById('box1');
+        const box2 = document.getElementById('box2');
+        const box3 = document.getElementById('box3');
+
+        //개별적으로 요소를 선택 -> 개별적으로 적용
+        // let box1flag = true;
+        // box1.addEventListener('click', ()=> { //클릭하면 bg-red 추가
+        //     box1.classList.toggle('bg-red');
+
+        //     // if(box1flag) {
+        //     //     box1.classList.add('bg-red');
+        //     //     box1flag = false;
+        //     // } else {
+        //     //     box1.classList.remove('bg-red');
+        //     //     box1flag = true;
+        //     // } -> 이거 다 toggle로 줄이기 가능!!
+        // });
+
+        // box2.addEventListener('click', ()=> { //클릭하면 bg-red 추가
+        //     box2.classList.toggle('bg-red');
+        // });
+
+        // box3.addEventListener('click', ()=> { //클릭하면 bg-red 추가
+        //     box3.classList.toggle('bg-red');
+        // });
+
+        // const boxList = document.getElementsByClassName('box');
+
+
+        //반복문으로 여러개 적용
+        //for..of   for..in
+
+        /*
+        for(let i=0; i<boxList.length; i++) {
+
+            boxList[i].addEventListener('click', ()=> {
+                boxList[i].classList.toggle('bg-red');
+            });
+        }
+        */
+
+        //forEach 함수 기능을 활용해서, 반복으로 적용
+        const boxList = document.querySelectorAll('.box');
+
+        //foreach -> 지정한 리스트를 하나씩 꺼내서 함수에 입혀준다? (= for of랑 비슷)
+        //위의 6개 요소 순차적으로 입력 받음
+        //for of        //boxList[]
+        /*
+        boxList.forEach( (item)=> {
+            //console.log('출력');
+            console.log(item);
+
+            item.addEventListener('click', ()=> {
+                item.classList.toggle('bg-red');
+            });
+        })
+        */
+
+        //this 활용
+        /*
+        boxList.forEach( (box)=> {
+
+            box.addEventListener('click', function(){
+                console.log(this); //this = 나 자신
+                this.classList.toggle('bg-red');
+            });
+        })
+            */
+
+        //this 활용 + 화살표함수
+        boxList.forEach( (box)=> {
+            
+            box.addEventListener('click', (event)=> {
+                //console.log(this);
+                //this.classList.toggle('bg-red');
+                console.log(event);
+                //발생한 이벤트 정보를 가진 event 객체 내부에
+                // target 키값으로 접근하는 내용에 이벤트 발생 요소
+                event.target.classList.toggle('bg-red');
+            });
+        })
+
+    </script>
+</body>
+</html>
