@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+/* 필요시 작성 */
+</style>
+</head>
+<body>
+<div class="container">
+<div id="main">
+<p id="p1">p1 텍스트</p>
+<p id="p2">p2 텍스트</p>
+</div>
+</div>
+<button onclick="changeMain()">main 배경색 gray로 변경</button>
+<button onclick="changeMainOriginal()">main 배경색 원상복구</button>
+<button onclick="changeP1()">p1 글자색 red로 변경</button>
+<button onclick="changeP1Original()">p1 글자색 원상복구</button>
+<button onclick="changeP2()">"p2 텍스트"를 "p2 글자" 로 변경</button>
+
+
+<script>
+/* 코드 작성 부분 */
+const main = document.getElementById('main');
+const p1 = document.getElementById('p1');
+const p2 = document.getElementById('p2');
+
+function changeMain() {
+    main.style.backgroundColor = 'gray';
+}
+function changeMainOriginal() {
+    main.style.backgroundColor = 'white';
+}
+
+function changeP1() {
+    p1.style.color = 'red';
+}
+function changeP1Original() {
+    p1.style.color = 'black';
+}
+
+function changeP2() {
+    p2.textContent = 'p2 글자';
+}
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+/* 필요시 작성 */
+.red {
+    color : red;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<div id="main">
+<p id="p1">p1 텍스트</p>
+<p id="p2">p2 텍스트</p>
+</div>
+</div>
+<button onclick="changeMain()">main 배경색 gray로 변경</button>
+
+<button onclick="changeP1()">p1 글자색 red로 변경</button>
+
+<button onclick="changeP2()">"p2 텍스트"를 "p2 글자" 로 변경</button>
+
+
+<script>
+/* 코드 작성 부분 */
+const main = document.getElementById('main');
+const p1 = document.getElementById('p1');
+const p2 = document.getElementById('p2');
+
+    let isBgGray = false;
+
+function changeMain() {
+
+    //변수 활용
+    if(isBgGray) {
+        isBgGray = false;
+        document.getElementById('main').style.removeProperty('background-color');
+    } else {
+        isBgGray = true;
+        document.getElementById('main').style.backgroundColor = 'gray';
+    }
+
+    /* 적용된 속성값을 확인해서 진행
+    main.style.backgroundColor = 'gray';
+
+    if(main.style.backgroundColor == 'gray') {
+        console.log('현재 gray');
+        main.style.removeProperty('background-color');
+    } else {
+        console.log('gray가 아님');
+        main.style.backgroundColor = 'gray';
+    }
+        */
+}
+
+function changeP1() {
+    //p1.style.color = 'red';
+    p1.classList.toggle('red');
+}
+
+let index = 1;
+let texArr = ['p2 텍스트', 'p2 하나', 'p2 둘', 'p2 셋', 'p2 넷'];
+function changeP2() {
+    //p2.textContent = 'p2 글자';
+
+    p2.textContent = texArr[index];
+    index++;
+    // if(index > 4){
+    //     index = 0;
+    // }
+    index = index % texArr.length;
+
+    //0%5 = 0
+    //1%5 = 1
+    //... = 2  3  4 
+    //5%5 = 0
+
+
+    /*
+    if(p2.textContent == 'p2 텍스트') {
+        p2.textContent = 'p2 하나';
+    } else if(p2.textContent == 'p2 하나') {
+        p2.textContent = 'p2 둘';
+    } else if(p2.textContent == 'p2 둘') {
+        p2.textContent = 'p2 셋';
+    } else if(p2.textContent == 'p2 셋') {
+        p2.textContent = 'p2 넷';
+    } else {
+        p2.textContent = 'p2 텍스트';
+    }
+    */
+} 
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
